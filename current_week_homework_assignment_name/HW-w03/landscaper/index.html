@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jake Brenneman's Landscaper Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+
+<body>
+
+<div class="grid-container">
+    <div class="grid-item toolGrid"><!-- TOOLS -->
+        <div class="toolGrid-item"></div>
+        <div class="toolGrid-item"></div>
+        <div class="toolGrid-item toolSizing"><a href="#"><img src="./images/toolShop.png"></a></div>
+    </div>
+    <div class="grid-item customerGrid"><!-- CUSTOMER -->
+        <div class="customerGrid-item"></div>
+        <div class="customerGrid-item"></div>
+        <div class="customerGrid-item"></div>
+        <div class="customerGrid-item"><a href="#"><img src="./images/helpSign.png"></a></div>
+    </div>  
+    <div class="grid-item carGrid"><!-- CAR -->
+        <div class="carGrid-item"></div>
+        <div class="carGrid-item"></div>
+        <div class="carGrid-item"><a href="#"><img src="./images/car.png"></a></div>
+        <div class="carGrid-item2"><a href="#"><img src="./images/exit.png"></a></div>
+    </div>  
+    <div class="grid-item walletGrid"> <!-- WALLET -->
+        <div class="walletGrid-item"></div>
+        <div class="walletGrid-item"></div>
+        <div class="walletGrid-item"></div>
+        <div class="walletGrid-item"></div>
+        <div class="walletGrid-item"></div>
+        <div class="walletGrid-item"></div>
+        <div class="walletGrid-item"></div>
+        <div class="walletGrid-item"></div>
+        <div class="walletGrid-item"></div>
+        <div class="walletGrid-item"></div>
+        <div class="walletGrid-item"></div>
+        <div class="walletGrid-item"></div>
+        <div class="walletGrid-item wallet"></div>
+        <div class="walletGrid-item totalMoney">0</div>
+        <div class="walletGrid-item"></div>
+    </div>
+    <div class="grid-item textGrid"><!-- TEXT WINDOW -->
+                <div class="textGrid-item">
+                    <div id="avatarPic"></div>
+                </div>
+                <div class="textGrid-item bigTextSpace"> <!-- TEXT -->
+                    <div id="bigTextArea">
+                        <div class="welcome">Welcome to the Landscaper Game!</div>
+                        <!-- ALL TEXTBOX TEXT goes HERE -->
+                    </div>
+                </div>
+                <div class="textGrid-item wideSpace">
+                    <input id="wideInput" type="text" autocomplete="off" value="" autofocus>
+                </div>
+                <div class="textGrid-item submitSpace">
+                    <input id="smallSubmit" type="submit" value="Enter" onclick="storeInput()">
+                </div>
+    </div>
+    <div class="grid-item inventoryGrid"> <!-- INVENTORY -->
+        <div class="inventoryGrid-item"></div>
+        <div class="inventoryGrid-item"></div>
+        <div class="inventoryGrid-item"></div>
+        <div class="inventoryGrid-item"></div>
+        <div class="inventoryGrid-item"></div>
+        <div class="inventoryGrid-item"></div>
+        <div class="inventoryGrid-item"></div>
+        <div class="inventoryGrid-item"></div>
+        <div class="inventoryGrid-item"></div>
+        <div class="inventoryGrid-item"></div>
+        <div class="inventoryGrid-item"></div>
+        <div class="inventoryGrid-item"></div>
+        <div class="inventoryGrid-item"></div>
+        <div class="inventoryGrid-item"></div>
+        <div class="inventoryGrid-item"></div>
+        <div class="inventoryGrid-item"></div>
+        <div class="inventoryGrid-item"></div>
+        <div class="inventoryGrid-item"></div>
+        <div class="inventoryGrid-item"></div>
+        <div class="inventoryGrid-item"></div>
+        <div class="inventoryGrid-item teethPic"></div>
+        <div class="inventoryGrid-item scissorsPic">$5</div>
+        <div class="inventoryGrid-item pushPic">$25</div>
+        <div class="inventoryGrid-item mowerPic">$250</div>
+        <div class="inventoryGrid-item studentPic">$500</div>
+    </div>
+      
+
+</div><!-- END of CONTAINER -->
+
+<script type="text/javascript" src="app.js"></script>
+</body>
+
+
+</html>

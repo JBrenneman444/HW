@@ -1,0 +1,192 @@
+body {
+    background: white;
+    margin: 0 auto;
+}
+
+nav {
+    background: white;
+    padding: 15px;
+}
+
+.primary-nav {
+    padding-left: 40px;
+    padding-right: 40px;
+    display:-webkit-flex;
+    display:flex;
+    list-style-type:none;
+    justify-content:flex-end;
+}
+
+.left {
+    margin-right:auto;
+    padding: 7px;
+    font-size: 25px;
+}
+
+.right {
+    padding:7px;
+    font-size: 25px;
+}
+
+.left > a {
+    color: blue;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: impact;
+}
+
+.right > a {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main {
+    background-image: url(./images/oscarBackground.png);
+    background-size: cover;
+    padding-top: 120px;
+    padding-left: 40px;
+    padding-bottom: 100px;
+}
+
+.main > h1 {
+    color: white;
+    font-size: 70px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 60px; /* or SPACE like THIS??? */
+}
+
+.main > p {
+    color: white;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 60px; /* or SPACE like THIS??? */
+}
+
+button {
+    padding: 10px 15px;
+    background-color: white;
+    color: blue;
+}
+
+.threeCardsContainer {
+    text-align: center;
+    padding: 7px 0px;
+}
+
+.threeCards {
+    display: inline-block;
+    background: red;
+    color: white;
+    border: solid 1px grey;
+    width: 31%;
+    margin: 7px;
+}
+
+.title {
+    background: white;
+    color: grey;
+    margin: 10px;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.description {
+    display: inline-block;
+    background: white;
+    color: black;
+    width: 45%;
+    margin: 0px 10px 10px 0px;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.learnMore {
+    color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 300px;
+}
+
+.learnMoreText {
+    border: solid 1px grey;
+    background: white;
+    padding: 5px;
+    text-transform: none;
+    text-decoration: none;
+}
+
+.concierge {
+    background-image: url(./images/concierge.jpg);
+    background-size: cover;
+}
+
+.doctor {
+    background-image: url(./images/doctor.jpg);
+    background-size: cover;
+}
+
+.business {
+    background-image: url(./images/business.jpg);
+    background-size: cover;
+}
+
+.rightplan {
+    text-align: center;
+    margin-bottom: 225px;
+}
+
+.rightplan > h1 {
+    margin: 10px;
+    padding: 15px 60px;
+    font-size: 40px;
+}
+
+.rightplan > button {
+    margin: 10px;
+    padding: 15px 60px;
+    font-size: 20px;
+}
+
+.forYou {
+    background: blue;
+    color: white;
+}
+
+.forBusiness {
+    background: white;
+    color: blue;
+}
+
+.footerContainer {
+    border-top: solid 1px rgb(224, 224, 224);
+    padding: 55px;
+    width: auto;
+    text-align: center;
+}
+
+.footerBox {
+    text-align: left;
+    display: inline-block;
+    width: 15%;
+    vertical-align:top;
+    background: white;
+}
+
+.headLink, .headLink > a {
+    
+    list-style-type: none;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: grey;
+    margin: 20px 0px;
+}
+
+.lowerLink, .lowerLink > a {
+    
+    list-style-type: none;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: grey;
+    margin-bottom: 10px;
+}
