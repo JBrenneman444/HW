@@ -67,10 +67,78 @@ console.log(crayonSelector())
     // Call that inner function
     function powerButton() {
         const options = () => {
-            console.log("select a song")
+            return "select a song"
         }
         return options()
     }
     console.log(powerButton())
 
-    
+// Model a Vending Machine
+let vendingMachine = {
+    snacks: [
+        {name: "Doritos", // position 1
+        price: 10},
+        {name: "Cheetohs", // position 2
+        price: 20},
+        {name: "Fritos", // position 3
+        price: 30}
+    ],
+    vend: function(snackPosition) {
+        chosenSnack = vendingMachine.snacks[snackPosition]
+        return chosenSnack
+    }
+}
+console.log(vendingMachine.vend(1))
+
+// Callbacks
+
+// Make a function add that takes two arguments (numbers) and sums them together
+const add = (num1, num2) => {
+    let sum = num1 + num2
+    return sum
+}
+console.log(add(1, 2))
+
+// Make a function subtract that takes two arguments (numbers) and subtracts them
+const subtract = (num1, num2) => {
+    let sum = num1 - num2
+    return sum
+}
+console.log(subtract(5, 3))
+
+// Make a function multiply that takes two arguments and multiplies them
+const multiply = (num1, num2) => {
+    let sum = num1 * num2
+    return sum
+}
+console.log(multiply(1, 1))
+
+// M*ke a function divide that takes two arguments and divides them
+const divide = (num1, num2) => {
+    let sum = num1 / num2
+    return sum
+}
+console.log(divide(4, 2))
+
+// Make a function calculate that takes three arguments.
+const calculate = (num1, num2, operates) => {
+    return operates(num1, num2)
+}
+console.log(calculate(1, 2, add))
+console.log(calculate(9, 5, subtract))
+console.log(calculate(2.5, 2, multiply))
+console.log(calculate(12, 2, divide))
+
+// Function definition placement
+const bar = () => {
+    console.log('bar here');
+}
+bar();
+
+const foo = () => {
+    console.log('foo here');
+}
+foo();
+
+// What is meant by the error(s) this produces?
+        // We're asking the console to run foo before it's defined resulting in an error.
