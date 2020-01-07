@@ -58,6 +58,10 @@ body {
     align-items:flex-end;
   }
 
+.landscapeClicker {
+    text-align:right;
+}
+
   .carGrid {
     grid-template-columns: 80% auto;
     grid-template-rows: 45% auto;
@@ -160,7 +164,7 @@ body {
 
     background: black;
     /* VARIOUS FACES for avatarPic //////////////////////// */
-    /* background-image: url(./images/simonsCustomer.png);  */
+    /* background-image: url(./images/simonsNarrator.png);  */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -217,6 +221,12 @@ body {
                 color: gold;
             }
 
+            .money {
+                display: inline-block;
+                font-weight: bold;
+                color: lime;
+            }
+
             /* player.userName {
                 color: aqua;
             } */
@@ -265,54 +275,58 @@ body {
     align-items: center;
     color: rgba(255, 255, 255, 0.685);
     text-shadow: 2px 2px rgb(0, 0, 0);
-  }
-
-.teethPic {
-    background: rgb(29, 29, 29);
-  -webkit-background-size: contain;
-  -moz-background-size: contain;
-  -o-background-size: contain;
-  background-size: contain;
-  border: 1px solid rgba(0, 0, 0, 0.8);
-
 }
-
-.scissorsPic {
+    
+    .allTools {
     background: rgb(29, 29, 29);
+    }
+
+    .tool0 {
+        background: rgb(29, 29, 29);
     -webkit-background-size: contain;
     -moz-background-size: contain;
     -o-background-size: contain;
     background-size: contain;
     border: 1px solid rgba(0, 0, 0, 0.8);
 
-  }
+    }
 
-  .pushPic {
-    background: rgb(29, 29, 29);
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    -o-background-size: contain;
-    background-size: contain;
-    border: 1px solid rgba(0, 0, 0, 0.8);
+    .tool1 {
+        background: rgb(29, 29, 29);
+        -webkit-background-size: contain;
+        -moz-background-size: contain;
+        -o-background-size: contain;
+        background-size: contain;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+    }
 
-  }
+    .tool2 {
+        background: rgb(29, 29, 29);
+        -webkit-background-size: contain;
+        -moz-background-size: contain;
+        -o-background-size: contain;
+        background-size: contain;
+        border: 1px solid rgba(0, 0, 0, 0.8);
 
-  .mowerPic {
-    background: rgb(29, 29, 29);
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    -o-background-size: contain;
-    background-size: contain;
-    border: 1px solid rgba(0, 0, 0, 0.8);
+    }
 
-  }
+    .tool3 {
+        background: rgb(29, 29, 29);
+        -webkit-background-size: contain;
+        -moz-background-size: contain;
+        -o-background-size: contain;
+        background-size: contain;
+        border: 1px solid rgba(0, 0, 0, 0.8);
 
-  .studentPic {
-    background: rgb(29, 29, 29);
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    -o-background-size: contain;
-    background-size: contain;
-    border: 1px solid rgba(0, 0, 0, 0.8);
+    }
 
-  }
+    .tool4 {
+        background: rgb(29, 29, 29);
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+
+    }
+
