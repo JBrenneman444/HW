@@ -401,7 +401,7 @@ var startGame = () => {
         resetItems();
 
 };
-setTimeout(startGame, 0800); // change to 3000 when finished
+setTimeout(startGame, 3000); // change to 3000 when finished
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // EVENT TRIGGERED FUNCTIONS
@@ -510,16 +510,16 @@ var checkInput = () => {
                 updateMoney()
                 console.log(`The user's name is: ` + player.userName);
                     newText(`Here are your instructions:<br>`);
-                    setTimeout(function() { newText(instructionsText); }, 0100); // change to 1500 when finished
-                    setTimeout(function() {scrollingDiv.scrollBy(0, 75); }, 0100); // change to 1500 when finished     
+                    setTimeout(function() { newText(instructionsText); }, 3000); // change to 1500 when finished
+                    setTimeout(function() {scrollingDiv.scrollBy(0, 75); }, 3000); // change to 1500 when finished     
                 updateSequence("1B")
             } else { // if ANYONE OTHER THAN JAKE is playing...
                 player.userName = userInput;
                     newText(`<font color=aqua>` + player.userName + `</font>, huh? That's an okay name. Jake would be cooler, though.<br>`);
                 console.log(`The user's name is: ` + player.userName);
                     newText(`Here are your instructions:<br>`);
-                    setTimeout(function() { newText(instructionsText); }, 0100);  // change to 1500 when finished
-                    setTimeout(function() {scrollingDiv.scrollBy(0, 75); }, 0100);  // change to 1500 when finished
+                    setTimeout(function() { newText(instructionsText); }, 3000);  // change to 1500 when finished
+                    setTimeout(function() {scrollingDiv.scrollBy(0, 75); }, 3000);  // change to 1500 when finished
                 updateSequence("1B")
             }
         // Sequence: 1B
@@ -577,11 +577,8 @@ var checkInput = () => {
 //////////////////
 
 //////////////
-// MANDATORY
+// DO IT
 //////////////
-
-    // update setTIMEOUTS *************************
-    // fix YES NO before MAIN GAME *************************
 
     // RESTART game
 
