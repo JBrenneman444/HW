@@ -1,5 +1,5 @@
 html { 
-    background: url(./images/background.png) no-repeat fixed; 
+    background: url(./images/background.png) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -24,17 +24,19 @@ body {
   .toolGrid {
     grid-template-rows: 50% auto;
     grid-template-columns: auto auto;
-    padding: 0px; /*  */
+    padding: 0px;
+
     /* border: 1px solid rgba(0, 0, 0, 0.8); */
 }
 
 .toolGrid-item {
     padding: 0px;
     font-size: 20px;
-    text-align: center;
-    display: grid;
+    justify-self: center;
+    align-self: center;
+
     /* border: 1px solid rgba(0, 0, 0, 0.8); */
-    align-items: center;
+
   }
 
   .toolSizing {
@@ -42,54 +44,54 @@ body {
     grid-column-end: 3;
   }
 
-  .customerGrid {
+  .landscapeGrid {
     grid-template-columns: 50% auto;
     padding: 0px; /*  */
+
     /* border: 1px solid rgba(0, 0, 0, 0.8); */
     
 }
 
-.customerGrid-item {
+.landscapeGrid-item {
     padding: 0px;
     font-size: 20px;
     text-align: center;
-    display: grid;
+
     /* border: 1px solid rgba(0, 0, 0, 0.8); */
-    align-items:flex-end;
+
   }
 
 .landscapeClicker {
-    text-align:right;
+    align-self: flex-end;
+    justify-self: right;
 }
 
-  .carGrid {
-    grid-template-columns: 80% auto;
+  .exitGrid {
+    grid-template-columns: 70% auto;
     grid-template-rows: 45% auto;
-    padding: 10px; /*  */
+
     /* border: 1px solid rgba(0, 0, 0, 0.8); */
 }
 
-.carGrid-item {
-    padding: 0px;
-    font-size: 20px;
-    text-align: center;
-    display: grid;
+.exitGrid-item {
     /* border: 1px solid rgba(0, 0, 0, 0.8); */
-    align-items: flex-end;
   }
 
-  .carGrid-item2 {
-    padding: 0px;
-    font-size: 20px;
-    display: grid;
+  .exitGrid-item2 {
     /* border: 1px solid rgba(0, 0, 0, 0.8); */
+
     align-items: flex-start;
   }
+
+/* //////// */
+/* BOTTOM 3 */
+/* //////// */
 
   .walletGrid {
     grid-template-columns: 16% auto 25% 25%;
     grid-template-rows: auto auto auto 20%;
     padding: 0px; /*  */
+
     /* border: 1px solid rgba(0, 0, 0, 0.8); */
 }
 
@@ -97,6 +99,7 @@ body {
     padding: 0px;
     text-align: center;
     display: grid;
+
     /* border: 1px solid rgba(0, 0, 0, 0.8); */
     align-items: center;
   }
@@ -130,6 +133,7 @@ body {
     grid-template-columns: 17% auto auto 20%;
     grid-template-rows: 80% auto;
     padding: 5px 5px 0px 5px;
+
     /* border: 1px solid rgba(0, 0, 0, 0.8); */
   }
 
@@ -138,6 +142,7 @@ body {
     color: white;    
     font-size: 30px;
     display: grid;
+
     /* border: solid 1px rgb(75, 75, 75); */
 }
 
@@ -163,8 +168,6 @@ body {
     border: solid 1px rgb(75, 75, 75);
 
     background: black;
-    /* VARIOUS FACES for avatarPic //////////////////////// */
-    /* background-image: url(./images/simonsNarrator.png);  */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -227,16 +230,12 @@ body {
                 color: lime;
             }
 
-            /* player.userName {
-                color: aqua;
-            } */
 
 /* /////////////////////////////////// */
 /* BUTTONS */
 /* /////////////////////////////////// */
 
 #wideInput { /* BUTTON */
-        /* width: 81%; */
         padding: 0px 5px 0px 0px;
         height: 25px;
         background-color: black;
@@ -247,8 +246,7 @@ body {
        }
 
 #smallSubmit { /* BUTTON */
-    /* width: 16%; */
-    background-color: black;
+        background-color: black;
         color: white;
         height: 30px;
         margin: 10px 10px 10px 0px;
@@ -262,7 +260,9 @@ body {
     grid-template-columns: 20% 20% 20% 20% auto;
     grid-template-rows: 20% 20% 20% 20% auto;
     padding: 0px; /*  */
+
     /* border: 2px solid rgba(0, 0, 0, 0.8); */
+
     /* grid-gap: 2px; */
 }
 
@@ -271,22 +271,28 @@ body {
     font-size: 23px;
     text-align: center;
     display: grid;
+
     /* border: 1px solid rgba(0, 0, 0, 0.8); */
+
     align-items: center;
     color: rgba(255, 255, 255, 0.685);
     text-shadow: 2px 2px rgb(0, 0, 0);
 }
-    
+
+/* ///////////// */
+/* TOOLS */
+/* ///////////// */
+
     .allTools {
     background: rgb(29, 29, 29);
     }
 
     .tool0 {
         background: rgb(29, 29, 29);
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    -o-background-size: contain;
-    background-size: contain;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     border: 1px solid rgba(0, 0, 0, 0.8);
 
     }
@@ -312,10 +318,11 @@ body {
 
     .tool3 {
         background: rgb(29, 29, 29);
-        -webkit-background-size: contain;
-        -moz-background-size: contain;
-        -o-background-size: contain;
-        background-size: contain;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-repeat: no-repeat;
         border: 1px solid rgba(0, 0, 0, 0.8);
 
     }
