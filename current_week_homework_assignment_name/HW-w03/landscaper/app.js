@@ -159,7 +159,10 @@ function clickToolStore() {
                 // once multiple tool functionality added --> <font class=userPrompt>(You may now use <font class=instructions>two tools at once</font>.)<br><br></font>`);
             scrollingDiv.scrollTop = scrollingDiv.scrollHeight;
             updateMoney();
-    } else {
+        } else {
+            // do nothing
+        }        
+    } else { // if beatGame is FALSE
         if (gameState.currentSequence == "2A" && player.currentLocation !== "atToolStore") { // would change if adding capacity for MULTIPLE TOOLS
             changeAvatarToWorker(); // turns location to atToolStore
             newText(`<br>Hey there,<br>
@@ -172,7 +175,6 @@ function clickToolStore() {
         } else {
 
         }
-    }
     }
 }
 
@@ -370,8 +372,17 @@ var startGame = () => {
     player = {
         totalEarnings: 0, // test value
         currentTool: tools[0],
-        workedBefore: false
+        workedBefore: false,
+        userName: "",
+        currentCapacity: 1,
+        currentLocation: ""
     };
+
+    beatGame = false;
+    userInput = '';
+    timerOn = false;
+    userOptions = '';
+    storeCurrentSequence = "";
 
     // change Avatar
     changeAvatarToNarrator()
@@ -544,16 +555,13 @@ var checkInput = () => {
         } else if (gameState.currentSequence == "2B") { 
             newText(``) 
             updateSequence("2C")
-        // Sequence: 2C
-        } else if (gameState.currentSequence == "2C") { 
-            newText(``) 
-            updateSequence("2D")
-        // Sequence: 2D
+        // Sequence: exitSequence
         } else if (gameState.currentSequence == "exitSequence") {
             if (userInput == "Restart" || userInput == "restart") {
                 newText(`Copy that! Restarting the game now.`);
                 console.log(`Restarting game.`);
                 updateSequence("startSequence0A");
+                setTimeout(startGame, 3000);
             } else if (userInput == "Quit" || userInput == "quit") {
                 newText('Okay. Feel free to close this window.');
                 updateSequence("playerQuit")
@@ -580,7 +588,10 @@ var checkInput = () => {
 // DO IT
 //////////////
 
-    // RESTART game
+    // RESTART game -- seems like it's holding onto user responses or sequences, despite clearing them..
+        // --user name error at beginning
+        // --toolStore error
+        // multiple response triggers
 
 //////////////
 // OPTIONAL
