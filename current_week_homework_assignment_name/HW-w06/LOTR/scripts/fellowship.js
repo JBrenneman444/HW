@@ -110,12 +110,15 @@ const keepItSecretKeepItSafe = () => {
 const makeBaddies = () => {
 
   // 1. display an unordered list of baddies in Mordor
-
+  let $listOfBaddies = $('<ul>')
+  for (i=0;i<baddies.length;i++) {
+    let $baddy = $('<li>')
+    $listOfBaddies.append($baddy)
   // 2. give each of the baddies a class of "baddy"
-
+    $baddy.addClass('baddy')
   // 3. remember to append the ul to Mordor
-
-};
+    $('#Mordor').append($listOfBaddies)
+}};
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 4 complete - Made the Baddies"..
