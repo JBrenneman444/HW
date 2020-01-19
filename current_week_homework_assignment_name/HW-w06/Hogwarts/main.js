@@ -46,6 +46,7 @@ $trunk.append($trunkItem4)
 
 let $trunkItem5 = $('<li>')
 $trunkItem5.text('leash')
+$trunkItem5.addClass('toad')
 $trunk.append($trunkItem5)
 
 let $trunkItem6 = $('<li>')
@@ -141,5 +142,11 @@ $h4Wand.css('color', 'blue')
 $h4Pet.remove()
 $trunk.after($h4Pet)
 $h3.after($h4Pet)
+
+$('.secret').hide('slow').delay(2000)
+$('.secret').show('slow')
+
+$trunkItem5.addClass('cabbage')
+$trunkItem5.removeClass('cabbage')
 
 })
