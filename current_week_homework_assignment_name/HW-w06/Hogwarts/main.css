@@ -2,3 +2,7 @@ body {
     background-color: rgb(227, 223, 255);
     text-align: center;
 }
+
+.toad {
+    font-family: fantasy;
+}
