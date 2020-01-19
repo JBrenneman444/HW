@@ -149,4 +149,13 @@ $('.secret').show('slow')
 $trunkItem5.addClass('cabbage')
 $trunkItem5.removeClass('cabbage')
 
+$h5.text('Fall 2021')
+
+$trunk.prepend($trunkItem1.clone())
+
+$trunk.attr('storage','chest')
+
+$table.css('background','black')
+$table.css('color','gold')
+
 })
