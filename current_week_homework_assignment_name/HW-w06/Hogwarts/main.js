@@ -133,23 +133,13 @@ let $td10 = $('<td>')
 $td10.text("Quidditch Practice")
 $tableRow6.append($td10)
 
-
-// <p>Simple table with header</p>
-// <table>
-//   <tr>
-//     <th>First name</th>
-//     <th>Last name</th>
-//   </tr>
-//   <tr>
-//     <td>John</td>
-//     <td>Doe</td>
-//   </tr>
-//   <tr>
-//     <td>Jane</td>
-//     <td>Doe</td>
-//   </tr>
-// </table>
-
-
+$h4Wand.remove()
+$trunkItem1.remove()
+$h4Wand.text("Phoenix Wand")
+$h4Pet.after($h4Wand)
+$h4Wand.css('color', 'blue')	
+$h4Pet.remove()
+$trunk.after($h4Pet)
+$h3.after($h4Pet)
 
 })
