@@ -14,3 +14,16 @@ body {
 li {
     list-style-type: none;
 }
+
+table, th, td {
+    border: gray 1px solid;
+}
+
+table {
+    display: inline-block;
+    text-align: center;
+}
+
+h5 {
+    margin-bottom: 0px;
+}
