@@ -155,9 +155,16 @@ const makeBuddies = () => {
 const leaveTheShire = () => {
   // 1. grab the hobbits (the ul in which they reside) and move them to Rivendell
       // hint: the hobbits ul is a childNode of The-Shire-- there is way to get a list of childNodes
+      let $hobbitList = $("#The-Shire").children()[1]
+      $hobbitList.remove()
+      $('#Rivendell').append($hobbitList)
 
-  //Stretch: add an event handler/listener so that when you click on the `h1` The Shire, this function will be called (be sure to do it in the window.onload/document.ready function)
+      
+        //Stretch: add an event handler/listener so that when you click on the `h1` The Shire, this function will be called (be sure to do it in the window.onload/document.ready function)
 
+        // couldn't get the Stretch prompt. this is what i tried (in the document ready/window onload):
+        // let $theShireH1 = $("#The-Shire:first-child")
+        // $theShireH1.on('click', leaveTheShire);
 };
 
 // COMMIT YOUR WORK
@@ -297,4 +304,5 @@ $(()=>{
   $('#11').on('click', itsDangerousToGoAlone);
   $('#12').on('click', weWantsIt);
   $('#13').on('click', thereAndBackAgain);
+
 });
