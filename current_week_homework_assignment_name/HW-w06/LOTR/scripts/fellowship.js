@@ -96,8 +96,11 @@ const keepItSecretKeepItSafe = () => {
   $theRing.attr('id','theRing')
   // 2. add the ring as a child of Frodo
     // hint: Frodo does not have an id, but there is a command to retrieve all elements with a certain class. This should give you an array for you to access . . .
-    // $('.hobbit[0]').append($theRing)
-    $('.hobbit').first().append($theRing)
+    
+    // $('.hobbit')[0].append($theRing) // shows as [object Object] ???
+
+    $('.hobbit').first().append($theRing) // used the .first() method instead
+
     // when you think you have given Frodo the ring, check in your Elements tab to see that it works correctly
 };
 
@@ -129,14 +132,18 @@ const makeBaddies = () => {
 const makeBuddies = () => {
 
   // 1. create an aside tag and append it to middle-earth below mordor
-
+  let $aside = $('<aside>')
+  $('section').append($aside)
   // 2. display an unordered list of buddies in the aside
-
+  let $listOfBuddies = $('<ul>')
+  for (i=0;i<buddies.length;i++) {
+    let $buddy = $('<li>')
+    $listOfBuddies.append($buddy)
   // 3. give each of the buddies a class of "buddy"
-
+    $buddy.addClass('buddy')
   // 4. don't forget to append them to the aside
-
-};
+    $aside.append($listOfBuddies)
+}};
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 5 complete - Made the Buddies".
