@@ -74,13 +74,14 @@ const makeHobbits = () => {
     // hint: use the given 'hobbits' array and use a for loop
   for (i=0;i<hobbits.length;i++) {
     let $hobbit = $('<li>')
+    $hobbit.text(`${hobbits[i]}`)
     $hobbitList.append($hobbit)
   // 3. also, give each hobbit (`li`) a class of "hobbit"
     $hobbit.addClass('hobbit')
   // 4. append the ul to the shire
     // hint: get 'The-Shire' by using its id
     $('#The-Shire').append($hobbitList)
-
+    console.log("makeHobbits")
 }};
 
 // COMMIT YOUR WORK
@@ -94,14 +95,15 @@ const keepItSecretKeepItSafe = () => {
   // 1. create an empty div with an id of 'the-ring'
   let $theRing = $('<div>')
   $theRing.attr('id','theRing')
+
   // 2. add the ring as a child of Frodo
     // hint: Frodo does not have an id, but there is a command to retrieve all elements with a certain class. This should give you an array for you to access . . .
     
-    // $('.hobbit')[0].append($theRing) // shows as [object Object] ???
-
-    $('.hobbit').first().append($theRing) // used the .first() method instead
-
+    $("#The-Shire").find(".hobbit").first().append($theRing)
     // when you think you have given Frodo the ring, check in your Elements tab to see that it works correctly
+
+    console.log("keepItSecretKeepItSafe")
+
 };
 
 // COMMIT YOUR WORK
@@ -116,11 +118,15 @@ const makeBaddies = () => {
   let $listOfBaddies = $('<ul>')
   for (i=0;i<baddies.length;i++) {
     let $baddy = $('<li>')
+    $baddy.text(`${baddies[i]}`)
     $listOfBaddies.append($baddy)
   // 2. give each of the baddies a class of "baddy"
     $baddy.addClass('baddy')
   // 3. remember to append the ul to Mordor
     $('#Mordor').append($listOfBaddies)
+
+    console.log("makeBaddies")
+
 }};
 
 // COMMIT YOUR WORK
@@ -138,11 +144,15 @@ const makeBuddies = () => {
   let $listOfBuddies = $('<ul>')
   for (i=0;i<buddies.length;i++) {
     let $buddy = $('<li>')
+    $buddy.text(`${buddies[i]}`)
     $listOfBuddies.append($buddy)
   // 3. give each of the buddies a class of "buddy"
     $buddy.addClass('buddy')
   // 4. don't forget to append them to the aside
     $aside.append($listOfBuddies)
+
+    console.log("makeBuddies")
+
 }};
 
 // COMMIT YOUR WORK
@@ -159,12 +169,8 @@ const leaveTheShire = () => {
       $hobbitList.remove()
       $('#Rivendell').append($hobbitList)
 
-      
-        //Stretch: add an event handler/listener so that when you click on the `h1` The Shire, this function will be called (be sure to do it in the window.onload/document.ready function)
+      console.log("leaveTheShire")
 
-        // couldn't get the Stretch prompt. this is what i tried (in the document ready/window onload):
-        // let $theShireH1 = $("#The-Shire:first-child")
-        // $theShireH1.on('click', leaveTheShire);
 };
 
 // COMMIT YOUR WORK
@@ -177,8 +183,16 @@ const beautifulStranger = () => {
 
   // 1. change the buddy 'Strider' textnode to "Aragorn"
      // hint: You can get a list of elements by tag name, such as 'aside'
+     
+    //  let $Strider = $($('aside > ul > li.buddy')[3])
+    // $Strider.text('Aragorn')
 
-};
+     $("aside").find("li").eq(3).text("Aragorn");
+    
+
+     console.log("beautifulStranger")
+
+    };
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 7 complete - Strider is changed to Aragorn"
@@ -189,12 +203,23 @@ const beautifulStranger = () => {
 const forgeTheFellowShip = () => {
 
   // 1. create a new div with an id 'the-fellowship'
+  $theFellowship = $('<div>')
+  $theFellowship.attr('id','the-fellowship')
 
   // 2. add an h1 with the text 'The Fellowship' to this new div
+  $fellowshipH1 = $('<h1>')
+  $fellowshipH1.text('The Fellowship')
+  $theFellowship.append($fellowshipH1)
 
   // 3. append the fellowship to middle-earth
+  let $sectionME = $("section")
+  $sectionME.append($theFellowship)
 
-  // 4. add the unordered lists of hobbits and buddies to 'the-fellowship'
+  // // 4. add the unordered lists of hobbits and buddies to 'the-fellowship'
+  $('#Rivendell').find('ul').appendTo($theFellowship)
+  $('aside').find('ul').appendTo($theFellowship)
+
+  console.log("forgeTheFellowShip")
 
 };
 
@@ -207,10 +232,20 @@ const forgeTheFellowShip = () => {
 const theBalrog = () => {
 
   // 1. change the 'Gandalf' text to 'Gandalf the White'
+  $newGandalf = $('#the-fellowship').find('.buddy').first()
+  $newGandalf.text("Gandalf the White")  
 
   // 2. add a class "the-white" to this element
+  $newGandalf.addClass("the-white")
 
   // 3. in the style.css file, add a css rule to make elements of the class "the-white" have a white background and a grey border
+
+  $newGandalf.css('background','white')
+  $newGandalf.css('border-color','grey')
+  $newGandalf.css('border-width','1px')
+  $newGandalf.css('border-style','solid')
+
+  console.log("theBalrog")
 
 };
 
@@ -223,10 +258,15 @@ const theBalrog = () => {
 const hornOfGondor = () => {
 
   // 1. create a pop-up alert that the horn of gondor has been blown
-
+  alert("The Horn of Gondor has been blown!")
   // 2. Boromir's been killed by the Uruk-hai! Put a linethrough on Boromir's name
-
+  $boromirDied = $('#the-fellowship').find('.buddy').last()
+  $boromirDied.css("text-decoration","line-through")
   // 3. Tricky: Remove the Uruk-Hai from the Baddies on the page
+  $removeUrukhai = $('#Mordor').find('.baddy').eq(2)
+  $removeUrukhai.remove()
+
+  console.log("hornOfGondor")
 
 };
 
@@ -239,8 +279,22 @@ const hornOfGondor = () => {
 const itsDangerousToGoAlone = () => {
 
   // 1. take Frodo and Sam out of the fellowship and move them to Mordor (they don't need to be inside a ul in Mordor)
+      $itsFrodo = $('#the-fellowship').find('.hobbit').eq(0)
+      $itsSam = $('#the-fellowship').find('.hobbit').eq(1)
+
+      // move both to Mordor
+      $itsFrodo.remove()
+      $itsSam.remove()
+
+      $('#Mordor').append($itsFrodo)
+      $('#Mordor').append($itsSam)
 
   // 2. add a div with an id of 'mount-doom' to Mordor
+      $mountDoom = $('<div>')
+      $mountDoom.attr('id','mount-doom')
+      $('#Mordor').append($mountDoom)
+
+      console.log("itsDangerousToGoAlone")
 
 };
 
@@ -253,10 +307,19 @@ const itsDangerousToGoAlone = () => {
 const weWantsIt = () => {
 
   // 1. Create a div with an id of 'gollum' and add it to Mordor
-
+  $itsGollum = $('<div>')
+  $itsGollum.attr('id','gollum')
+  $('#Mordor').append($itsGollum)
   // 2. Move the ring from Frodo and give it to Gollum
-
+  $theRing = $('#theRing')
+  $theRing.remove()
+  $itsGollum.append($theRing)
   // 3. Move Gollum into Mount Doom
+  $itsGollum.remove()
+  $('#mount-doom').append($itsGollum)
+
+  console.log("weWantsIt")
+
 
 };
 
@@ -269,10 +332,18 @@ const weWantsIt = () => {
 const thereAndBackAgain = () => {
 
   // 1. remove Gollum and the Ring from the DOM
-
+  $('#gollum').remove()
+  $('#theRing').remove()
+  
   // 2. remove all the baddies from the DOM
+  $('.baddy').remove()
 
   // 3. Move all the hobbits back to the shire
+  $allHobbits = $('.hobbit').remove()
+  $allHobbits.appendTo('#The-Shire')
+
+  console.log("thereAndBackAgain")
+
 
 };
 
@@ -290,6 +361,11 @@ const thereAndBackAgain = () => {
 
 
 $(()=>{
+  
+  //Stretch: add an event handler/listener so that when you click on the `h1` The Shire, this function will be called
+
+  $(document.body).on("click", "h1", leaveTheShire);
+      // this solution works... but i feel like it isn't the one GA wants
 
   $('#1').on('click', makeMiddleEarth);
   $('#2').on('click', makeHobbits);
