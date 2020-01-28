@@ -1,0 +1,85 @@
+body {
+    font-family: sans-serif;
+}
+
+h1 {
+    margin: 3px 0px;
+}
+
+p {
+    margin: 3px 0px 6px 0px;
+}
+.flex-container {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    border: 1px solid red;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.grid-container {
+    display: inline-grid;
+    grid-template-columns: 25% 25% 25% auto;
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+    border: 1px solid blue;
+  }
+
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+
+    /* make text unselectable */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+  }
+
+  .GAsymbol {
+      padding: 25px 5px;
+      font-size: 20px;
+      font-weight: bold;
+  }
+
+.inputNumbers {
+    grid-column-start: 2;
+    grid-column-end: 5;
+    background-color: rgb(0, 0, 75);
+    text-align: right;
+    color: white;
+    font-weight: bold;
+
+}
+
+.clickable:hover {
+    background-color: rgb(217, 255, 0);
+}
+
+.clickable:active {
+    background-color: black;
+    color: yellow;
+    font-weight: bold;
+}
+
+  .clear {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+
+  .commands {
+    background-color: rgb(49, 49, 255);
+  }
+
+  .zero {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
