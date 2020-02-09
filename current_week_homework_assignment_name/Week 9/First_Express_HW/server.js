@@ -2,12 +2,25 @@ const express = require('express')
 const app = express()
 var port = 3000
 
+app.get("/", (req, res)=>{
+    res.send("root")
+})
+
 app.get("/greeting", (req, res)=>{
     res.send("hello stranger")
 })
 
 app.get('/greeting/:name', (req, res)=>{
     res.send("hello " + req.params.name)
+})
+
+app.get('/tip/:total/:tipPercentage', (req, res)=>{
+    console.log(req.query)
+    var total = Number(req.params.total)
+    var tipPercentage = Number(req.params.tipPercentage)
+    var tipAmount = total * (.01*req.params.tipPercentage)
+                    // 100 * (.01 * 20)
+    res.send("the tip amount is " + tipAmount);
 })
 
 // app.get("/calc/:num1/:num2", (req, res)=>{    
