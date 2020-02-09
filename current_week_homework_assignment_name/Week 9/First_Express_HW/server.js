@@ -23,6 +23,31 @@ app.get('/tip/:total/:tipPercentage', (req, res)=>{
     res.send("the tip amount is " + tipAmount);
 })
 
+app.get('/magic/:phrase',(req,res)=>{
+    var ballResponses = ["It is certain",
+     "It is decidedly so",
+      "Without a doubt",
+       "Yes definitely",
+       "You may rely on it",
+        "As I see it yes",
+         "Most likely",
+          "Outlook good",
+          "Yes",
+           "Signs point to yes",
+            "Reply hazy try again",
+             "Ask again later",
+             "Better not tell you now",
+              "Cannot predict now",
+               "Concentrate and ask again",
+               "Don't count on it",
+                "My reply is no",
+                 "My sources say no",
+                 "Outlook not so good",
+                  "Very doubtful"]
+    var phrase = req.params.phrase
+    res.send(`${phrase}<br><h1>${ballResponses[Math.floor(Math.random() * (ballResponses.length + 1))]}</h1>`)
+})
+
 // app.get("/calc/:num1/:num2", (req, res)=>{    
 //     console.log(req.query)
 //     res.send("the sum is " + sum);
