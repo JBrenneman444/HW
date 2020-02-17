@@ -14,6 +14,19 @@
 </head>
 <body>
     <h1>THE POKEDEX</h1>
-    <!-- Add a background-color and text color to the body, inside your <style> tag to be sure it is working as expected. Example: -->
+
+    <ul>
+
+    <!-- ALL JAVASCRIPT goes in CHERRIES -->
+    <!-- ANYTHING that needs to be inserted into HTML needs an "=" -->
+        <% for (i=0;i<selectedPokemon.length;i++) { %>
+            <% var titlePokemon = selectedPokemon[i].name %>
+            <% titlePokemon = titlePokemon[0].toUpperCase() + titlePokemon.slice(1); %>
+            <li><%= titlePokemon %></li>
+        <% } %>
+
+    </ul>
+
+    <!-- Manipulate the data to capitalize the first letter of their names -->
 </body>
 </html>

@@ -27,7 +27,7 @@ Delete = DELETE
 // ROUTES (MOST specific to LEAST) ================
 //=================================================
 app.get('/pokemon',(req,res)=>{
-    res.render('index.ejs')
+    res.render('index.ejs', {selectedPokemon: pokemon}) // defines OBJECT Key-Pair
 })
 
 // When user goes to /pokemon route they see index of pokemon - names of each pokemon
