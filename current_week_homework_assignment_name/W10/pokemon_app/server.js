@@ -30,6 +30,10 @@ app.get('/pokemon',(req,res)=>{
     res.render('index.ejs', {selectedPokemon: pokemon}) // defines OBJECT Key-Pair
 })
 
+app.get('/pokemon/:id',(req,res)=>{
+    res.render('show.ejs', { selectedPokemon: pokemon[req.params.id] })// defines Key-Pair
+})
+
 // When user goes to /pokemon route they see index of pokemon - names of each pokemon
 // Create a get route /pokemon that will , which will display your pokemon data as JSON in the browser
 

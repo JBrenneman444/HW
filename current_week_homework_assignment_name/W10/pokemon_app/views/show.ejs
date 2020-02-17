@@ -4,9 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pokemon - INDEX Page</title>
+    <title>Pokemon - SHOW Page</title>
+    <style type="text/css">
+        body {
+            color: blanchedalmond;
+            background-color: lightcoral;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
 </head>
 <body>
-    
+    <h1>SHOW Page</h1>
+
+    <h2>
+        <% var uppercase = selectedPokemon.name %>
+        <% uppercase = uppercase[0].toUpperCase() + uppercase.slice(1) %>
+        <%= uppercase %>
+    </h2>
+
+    <% var newImage = selectedPokemon.img %>
+    <% newImage = newImage + ".jpg" %>
+    <img src="<%= newImage %>"/>
+
+    <p>
+        <a href="/pokemon">Back to Pokedex</a>
+    </p>
+
 </body>
 </html>

@@ -9,24 +9,30 @@
         body {
           color: blanchedalmond;
           background-color: steelblue;
+          text-align: center;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
     </style>
 </head>
 <body>
     <h1>THE POKEDEX</h1>
 
-    <ul>
+    <ul style="list-style-type:none; padding-inline-start: 0px;">
 
     <!-- ALL JAVASCRIPT goes in CHERRIES -->
     <!-- ANYTHING that needs to be inserted into HTML needs an "=" -->
         <% for (i=0;i<selectedPokemon.length;i++) { %>
             <% var titlePokemon = selectedPokemon[i].name %>
             <% titlePokemon = titlePokemon[0].toUpperCase() + titlePokemon.slice(1); %>
-            <li><%= titlePokemon %></li>
+            <li><a href="/pokemon/<%= i %>">
+                <%= titlePokemon %>
+            </a></li>
         <% } %>
 
     </ul>
 
-    <!-- Manipulate the data to capitalize the first letter of their names -->
+    <!-- For each pokemon, add an <a> tag that will have an href that goes to the route /pokemon/x, where x is the array position of the pokemon in the data array. This should be set dynamically with ejs
+            When you click the link you should go to your show route and the index number corresponding to the pokemon's array position should be displayed -->
+
 </body>
 </html>
