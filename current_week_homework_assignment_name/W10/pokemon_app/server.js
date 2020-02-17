@@ -27,7 +27,7 @@ Delete = DELETE
 // ROUTES (MOST specific to LEAST) ================
 //=================================================
 app.get('/pokemon',(req,res)=>{
-    res.send(pokemon)
+    res.render('index.ejs')
 })
 
 // When user goes to /pokemon route they see index of pokemon - names of each pokemon
