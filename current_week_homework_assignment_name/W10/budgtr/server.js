@@ -3,7 +3,6 @@ const app = express()
 const port = 3000
 
 const budgetData = require('./models/budget.js') // This is our 'database'.
-
 // see a list of your income and expenditures
 // show you one income/expenditure item
 // create a new income/expenditure item
