@@ -6,10 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/skeleton.css">
-    <title>Budgetr - NEW Page</title>
+    <title>Budgetr - NEW Expense</title>
 </head>
 <body>
-    <h1>NEW Page</h1>
+    <div class=container>
 
+        <h1>NEW Expense</h1>
+        <form action="/budgets" method="POST"> <!-- POST means we're GIVING some data-->
+            Date: <input type="text" name="date" placeholder="April 1"/><br />
+            Name: <input type="text" name="name" placeholder="Taxes"/><br />
+            From: <input type="text" name="from" placeholder="Old Glory Insurance"/><br />
+            Amount: <input type="number" name="amount" placeholder="$1000"/><br />
+            Tags: <input type="text" name="tags" placeholder="Pet Stuff"/><br />
+            <input class="button-primary" name="" type="submit" value="Add Expense">
+
+        </form>
+        <p>
+            <a class="button" href="/budgets">Back to ALL Expenses</a>
+        </p>
+    </div>
 </body>
 </html>

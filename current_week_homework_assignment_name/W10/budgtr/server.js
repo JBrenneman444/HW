@@ -9,6 +9,10 @@ const budgetData = require('./models/budget.js') // This is our 'database'.
 // create a new income/expenditure item
 
 // MIDDLEWARE =======================
+app.use(express.urlencoded({extended:false}))
+    // "req.body" is UNDEFINED
+    // this ADDS body as a KEY and sets it to whatever was SENT in the BODY
+// app.use(express.json())
 app.use(express.static('public'))
 
 // ROUTES =======================
@@ -29,7 +33,18 @@ app.get('/budgets/:index', (req,res)=>{
 })
 
 app.post('/budgets', (req,res)=>{
-    res.render('index.ejs')
+    
+    let newExpense = {} // in order to make proper key pairs / not have a WHOLE object
+    newExpense.date = req.body.date
+    newExpense.name = req.body.name
+    newExpense.from = req.body.from
+    newExpense.amount = req.body.amount
+    newExpense.tags = req.body.tags
+
+    budgetData.push(newExpense)
+
+    console.log(budgetData)
+    res.redirect('/budgets') // sends user to app.GET fruits route
 })
 
 app.listen(port, ()=>{
