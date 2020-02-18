@@ -21,16 +21,17 @@
                 </tr>
             </thead>
             <tbody>
+            <% for (i=0;i<budget.length;i++) { %>
                 <tr>
-                    <td><%= budget[0].date %></td>
-                    <td><%= budget[0].name %></td>
-                    <td><%= budget[0].amount %></td>
+                    <td><%= budget[i].date %></td>
+                    <td><%= budget[i].name %></td>
+                    <td><%= budget[i].amount %></td>
                 </tr>
-                <tr>
-                    <td><%= budget[0].date %></td>
-                    <td><%= budget[0].name %></td>
-                    <td><%= budget[0].amount %></td>
-                </tr>
+            <% } %>
+
+                <!--each income/expenditure should be a <tr>
+                    each piece of data should be its own table cell <td>
+                    the name should be wrapped in an <a> (anchor) tag, that goes nowhere for the moment, but will eventually link to the show page for that item -->
             </tbody>
         </table>
     </div>
