@@ -25,7 +25,7 @@ app.get('/budgets/new', (req,res)=>{
 })
 
 app.get('/budgets/:index', (req,res)=>{
-    res.render('show.ejs')
+    res.render('show.ejs',{budget: budgetData[req.params.index]})
 })
 
 app.post('/budgets', (req,res)=>{

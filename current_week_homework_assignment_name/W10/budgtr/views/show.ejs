@@ -9,7 +9,31 @@
     <title>Budgetr - SHOW Page</title>
 </head>
 <body>
-    <h1>SHOW Page</h1>
-
+    <div class="container">
+        <h1><%= budget.name %></h1>
+        <p>
+            <a class="button" href="/budgets">Back to ALL Expenses</a>
+        </p>
+        <b>Date</b>
+            <ul>
+                <li><%= budget.date %></li>
+            </ul>
+        <b>Name</b>
+            <ul>
+                <li><%= budget.name %></li>
+            </ul>
+        <b>From</b>
+            <ul>
+                <li><%= budget.from %></li>
+            </ul>
+        <b>Amount</b>
+            <ul>
+                <li><%= budget.amount %></li>
+            </ul>
+        <b>Tags</b>
+            <ul>
+                <li><%= budget.tags %></li>
+            </ul>
+    </div>
 </body>
 </html>

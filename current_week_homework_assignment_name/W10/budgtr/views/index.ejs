@@ -11,12 +11,12 @@
 <body>
     
     <div class="container">
-        <h1>Budgtr ALL</h1>
+        <h1>Budgtr - ALL Expenses</h1>
         <table class="u-full-width">    <%  %>
             <thead>                         <%=  %>
                 <tr>
                     <th>Date</th>
-                    <th>Name</th>
+                    <th>Type of Expense</th>
                     <th>Amount</th>
                 </tr>
             </thead>
@@ -24,14 +24,12 @@
             <% for (i=0;i<budget.length;i++) { %>
                 <tr>
                     <td><%= budget[i].date %></td>
-                    <td><%= budget[i].name %></td>
+                    <td>
+                        <a href="#"><%= budget[i].name %></a>
+                    </td>
                     <td><%= budget[i].amount %></td>
                 </tr>
             <% } %>
-
-                <!--each income/expenditure should be a <tr>
-                    each piece of data should be its own table cell <td>
-                    the name should be wrapped in an <a> (anchor) tag, that goes nowhere for the moment, but will eventually link to the show page for that item -->
             </tbody>
         </table>
     </div>
