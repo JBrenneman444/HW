@@ -1,0 +1,33 @@
+<style>
+        body {
+          background: black;
+          color: white;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+        }
+    
+        .pokemon {
+          border: 1px solid goldenrod;
+        }
+
+        .noshowforms {
+          display:none;
+        }
+</style>
+
+<h1>EDIT Page</h1>
+
+<form action="/pokemon/<%=index%>?_method=PUT" method="POST">
+    Name: <input type="text" name="name" value="<%=poke.name%>"/><br/>
+    Type: <input type="text" name="type" value="<%=poke.type%>"/><br/>
+          <input class="noshowforms" name="img" value="<%=poke.img%>"/>
+          <% for(let stat in poke.stats) { %>
+            <label for="<%=stat%>"><%=stat.toUpperCase()%></label>
+            <input type="text" name="<%=stat%>" value="<%=poke.stats[stat]%>"/><br>
+          <% } %>
+
+
+
+
+    <input type="submit" name="" value="Submit Changes"/>
+</form>

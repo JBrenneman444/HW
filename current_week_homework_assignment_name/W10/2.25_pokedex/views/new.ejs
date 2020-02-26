@@ -1,0 +1,56 @@
+<style>
+        body {
+          background: black;
+          color: white;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+        }
+    
+        .pokemon {
+          border: 1px solid goldenrod;
+        }
+</style>
+
+<h1>ADD a Pokemon</h1>
+
+<img src="https://i.etsystatic.com/6081928/r/il/349da5/1748259489/il_570xN.1748259489_n3ob.jpg" alt="picture of pokeball" width="200px">
+
+<form action="/pokemon" method="POST">
+    Name: <input type="text" name="name" placeholder="Pikachu"/><br/>
+    Type: <input type="text" name="type" placeholder="Psychic"/><br/>
+    HP: <input type="text/number" maxlength="3" size="2" name="hp" placeholder="0-100"/><br/>
+    Attack: <input type="text/number" maxlength="3" size="2" name="attack" placeholder="0-100"/><br/>
+    Defense: <input type="text/number" maxlength="3" size="2" name="defense" placeholder="0-100"/><br/>
+    <input type="submit" value="ADD Pokemon"/>
+</form>
+
+<p><a href="/pokemon">Back to the Pokedex</a></p>
+
+<!-- 
+
+POKEMON DATA FORMAT
+
+id: "151",
+name: "Mew",
+img: "http://img.pokemondb.net/artwork/mew.jpg",
+type: [
+    "Psychic"
+],
+stats: {
+    hp: "100",
+    attack: "100",
+    defense: "100",
+    spattack: "100",
+    spdefense: "100",
+    speed: "100"
+},
+moves: {
+    level: [{
+    learnedat: "",
+    name: "pound",
+    gen: "V"
+    }, {
+    learnedat: "",
+    name: "reflect type",
+    gen: "V"
+    }, { -->

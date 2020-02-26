@@ -1,0 +1,26 @@
+<style>
+    body {
+      background: black;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    }
+
+    .pokemon {
+      border: 1px solid goldenrod;
+    }
+</style>
+<h1><%= poke.name %></h1>
+<ul>
+  <% let typeArray = [] %>
+  <% typeArray.push(poke.type) %>
+  <% for (i=0;i<typeArray.length;i++) { %>
+  <li><%= typeArray[i] %></li>
+  <% } %>
+</ul>
+<img src="<%= poke.img %>" alt="picture of pokemon" width="200px">
+<h2>Stats:</h2>
+<% for(let stat in poke.stats) { %>
+  <li><strong><%=stat%>:</strong> <%=poke.stats[stat]%></li>
+<% } %>
+<p><a href="/pokemon">Back to the Pokedex</a></p>

@@ -19,7 +19,7 @@ app.get('/', (req,res)=>{
     res.send('<a href="/budgets">Budgetr App</a>')
 })
 
-app.get('/budgets', (req,res)=>{
+app.get('/budgets/', (req,res)=>{
     res.render('index.ejs',{budget: budgetData})
 })
 
