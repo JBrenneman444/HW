@@ -2,7 +2,14 @@ const express = require('express');
 const app = express();
 const port = 3000
 
+// Connect MONGOOSE to MongoDB
+const mongoose = require('mongoose');
 
+//... and then farther down the file
+mongoose.connect('mongodb://localhost:27017/captainsLogDB', { useNewUrlParser: true});
+mongoose.connection.once('open', ()=> {
+    console.log('MongoDB Connected!');
+});
 
 // MIDDLEWARE
 app.use(express.urlencoded({extended:true}));
