@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EDIT</title>
+</head>
+<body>
+    
+<h1>Edit the Log</h1>
+        <form action="/logs/<%=logs.id%>?_method=PUT" method="POST">
+    		<!--  NOTE: the form is pre-populated with values for the server-->
+    		Title: <input type="text" name="title" value="<%=logs.title%>"/><br/>
+            Entry: <textarea cols="60" rows ="20" name="entry"/>
+                <%=logs.entry%>
+            </textarea><br/>
+            Ship needs repairs: <input type="checkbox" name="shipIsBroken"
+                <% if(logs.shipIsBroken === true){ %>
+                    checked
+                <% } %>
+            /><br/>
+            <input type="submit" name="" value="Submit Changes"/>
+        </form>
+
+</body>
+</html>

@@ -15,12 +15,6 @@ If you finish lab early consider:
 
 
 ### Delete Route
-1. Fill out your RESTful table
-1. in your `index.ejs`, add a delete form
-1. install and configure `method-override`
-1. upgrade your delete form to have the appropriate action and method
-1. make your delete route in your `server.js`
-1. make your delete route delete your log and redirect back to your index route
 1. don't forget to `git add` and `git commit` your work, give yourself an informative commit message so you can trace back your work, if you need to
 
 ### Edit Route

@@ -13,38 +13,22 @@ mongoose.connection.once('open', ()=> {
     console.log('MongoDB Connected!');
 });
 
+
+//include the method-override package
+const methodOverride = require('method-override');
+
+//use methodOverride.  We'll be adding a query parameter to our delete form named _method
+app.use(methodOverride('_method'));
+
 // MIDDLEWARE
 app.use(express.urlencoded({extended:true}));
 
 const Log = require('./models/logs.js');
 
-
-// INDEX
-app.get('/', (req, res)=>{
-    res.redirect('/logs');
-})
-
-app.get('/logs', (req, res)=>{
-    Log.find({}, (error, allLogs)=>{
-        res.render('index.ejs', {
-            logs: allLogs
-        });
-    });
-});
-
 // NEW
 app.get('/logs/new', (req, res)=>{
     res.render('new.ejs');
 });
-
-// SHOW
-app.get('/logs/:id',(req,res)=>{
-    Log.findById(req.params.id, (err, foundLog) => { // CALLBACK name doesn't matter
-        res.render("show.ejs", {
-          logs: foundLog // doesn't matter what you call the KEY TITLE
-        });
-      });
-})
 
 // CREATE / POST
 app.post('/logs',(req,res)=>{
@@ -59,6 +43,60 @@ app.post('/logs',(req,res)=>{
     });
 });
 
+// INDEX
+app.get('/', (req, res)=>{
+    res.redirect('/logs');
+})
+
+app.get('/logs', (req, res)=>{
+    Log.find({}, (error, allLogs)=>{
+        res.render('index.ejs', {
+            logs: allLogs
+        });
+    });
+});
+
+// EDIT
+app.get('/logs/:id/edit', (req, res)=>{
+    Log.findById(req.params.id, (err, foundLog)=>{ //find the log
+        res.render(
+        'edit.ejs',
+        {
+          logs: foundLog //pass in found log
+        }
+      );
+    });
+  });
+
+// PUT Route
+app.put('/logs/:id', (req, res)=>{
+if(req.body.shipIsBroken === 'on'){
+    req.body.shipIsBroken = true;
+} else {
+    req.body.shipIsBroken = false;
+}
+Log.findByIdAndUpdate(req.params.id, req.body, (err, updatedModel)=>{
+    res.redirect('/logs');
+});
+});
+  
+
+// SHOW
+app.get('/logs/:id',(req,res)=>{
+    Log.findById(req.params.id, (err, foundLog) => { // CALLBACK name doesn't matter
+        res.render("show.ejs", {
+          logs: foundLog // doesn't matter what you call the KEY TITLE
+        });
+      });
+})
+
+
+// DELETE
+app.delete('/logs/:id', (req, res)=>{
+    Log.findByIdAndRemove(req.params.id, (err, data)=>{
+        res.redirect('/logs');//redirect back to fruits index
+    });
+  });  
 
 // Web Server:
 app.listen(port, (req,res)=>{
