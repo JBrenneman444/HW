@@ -80,7 +80,7 @@ Log.findByIdAndUpdate(req.params.id, req.body, (err, updatedModel)=>{
 });
 });
   
-
+//
 // SHOW
 app.get('/logs/:id',(req,res)=>{
     Log.findById(req.params.id, (err, foundLog) => { // CALLBACK name doesn't matter
