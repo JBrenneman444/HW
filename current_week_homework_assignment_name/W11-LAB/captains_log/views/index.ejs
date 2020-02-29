@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h1>INDEX page</h1>
+        <ul>
+            <% for(let i = 0; i < logs.length; i++){ %>
+                <li>
+                    <a href="/logs/<%=logs[i].id; %>">
+                        <%=logs[i].title; %>
+                    </a>
+                </li>
+            <% } %>
+        </ul>
+        <a href="/logs/new">ADD a NEW Fruit</a>
+    </body>
+</html>

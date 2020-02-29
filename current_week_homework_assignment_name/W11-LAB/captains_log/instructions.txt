@@ -10,31 +10,8 @@ If you finish lab early consider:
 
 
 
-### Mongo
-1. install `mongoose` and configure it in your `server.js`
-
-### Logs Model
-1. `mkdir models`
-1. `touch models/logs.js`
-1. Create the logs schema
-  - title: String
-  - entry: String
-  - shipIsBroken: Boolean (bonus: set a default to true)
-  - as a second argument to `mongoose.Schema()`, add `{ timestamps: true }`
-
-### Upgrade your Create Route
-1. upgrade your code to create your log in MongoDB
-1. have your route redirect to the show page after create
-1. don't forget to `git add` and `git commit` your work, give yourself an informative commit message so you can trace back your work, if you need to
-1. Stretch: make a seed file and seed it
 
 ### Index Route
-1. In `server.js` make an index route, be sure to follow the RESTful convention
-1. first, just test it by having it `res.send('index')`
-1. Don't forget to fill out your RESTful table!
-1. create `index.ejs` and change your `res.send` to `res.render` this page
-1. upgrade  your route and ejs to render all the logs in your database, just make an unordered list of the titles for now
-1. Add a link to the create page
 1. don't forget to `git add` and `git commit` your work, give yourself an informative commit message so you can trace back your work, if you need to
 
 ### Show Route
