@@ -32,6 +32,20 @@ app.get('/logs', (req, res)=>{
     });
 });
 
+// NEW
+app.get('/logs/new', (req, res)=>{
+    res.render('new.ejs');
+});
+
+// SHOW
+app.get('/logs/:id',(req,res)=>{
+    Log.findById(req.params.id, (err, foundLog) => { // CALLBACK name doesn't matter
+        res.render("show.ejs", {
+          logs: foundLog // doesn't matter what you call the KEY TITLE
+        });
+      });
+})
+
 // CREATE / POST
 app.post('/logs',(req,res)=>{
     if (req.body.shipIsBroken === 'on') { //if checked, req.body.shipIsBroken is set to 'on'
@@ -45,10 +59,6 @@ app.post('/logs',(req,res)=>{
     });
 });
 
-// NEW
-app.get('/logs/new', (req, res)=>{
-    res.render('new.ejs');
-});
 
 // Web Server:
 app.listen(port, (req,res)=>{

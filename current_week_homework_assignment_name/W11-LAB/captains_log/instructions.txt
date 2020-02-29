@@ -8,28 +8,11 @@ If you finish lab early consider:
 
 
 
-
-
-
-### Index Route
-1. don't forget to `git add` and `git commit` your work, give yourself an informative commit message so you can trace back your work, if you need to
-
 ### Show Route
-1. Fill out your Restful table
-1. In `server.js` make a show route, be sure to follow the Restful convention
-1. create a mongo query and `res.send` your data as a string
-1. upgrade your `index.ejs` so that each title links to its show page
-1. Create a `show.ejs` and add HTML
- - show the title
- - show the entry
- - show whether the ship is broken or not
- - add a link back to the index page
  - bonus:
   - if you had added time stamps to your model, display the date the entry was created
-1. upgrade your `res.send` to a `res.render` of your `show.ejs`
-1. don't forget to `git add` and `git commit` your work, give yourself an informative commit message so you can trace back your work, if you need to
 
->**Note:** This is the end of day 1 work. Everything below will not be covered until the next class session. Please take some time to clean up CSS and any other work for the above sections before moving on to the next sections.
+
 
 ### Delete Route
 1. Fill out your RESTful table
