@@ -5,22 +5,27 @@
 
     </head>
     <body>
-        <div class="container">
-
-            <h1>The Store</h1>
+        <div id="header-content">
+            <center>
+                <h1>Jake's Store</h1>
+                <a id="add-product" href="/store/new">ADD a NEW Product</a>
+            </center>
+        </div>
+        <div class="products-container">
                 <% for(let i = 0; i < products.length; i++){ %>
                     <div class='product-card'>
                         <a href="/store/<%=products[i].id; %>">
                             <%=products[i].name%>
-                        </a>
+                        </a><br>
                         <a href="/store/<%=products[i].id; %>">
-                            <img src="<%=products[i].img%>"/>
+                            <img class="product-img" src="<%=products[i].img%>"/>
                         </a>
+                            <font size=2>PRICE: $<%=products[i].price%></font>
                     </div>
                 <% } %>
-
-            <a href="/store/new">ADD a NEW Product</a>
-
+        </div>
+        <div id="footer-content">
+            <!--  -->
         </div>
     </body>
 </html>

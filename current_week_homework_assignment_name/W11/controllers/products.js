@@ -12,11 +12,11 @@ router.get('/new', (req, res)=>{
 
 // CREATE / POST
 router.post('/',(req,res)=>{
-    // if (req.body.shipIsBroken === 'on') { //if checked, req.body.shipIsBroken is set to 'on'
-    //     req.body.shipIsBroken = true;
-    // } else { //if not checked, req.body.shipIsBroken is undefined
-    //     req.body.shipIsBroken = false;
-    // }
+    if(req.body.img == ''){
+      req.body.img = "https://image.shutterstock.com/image-vector/no-image-available-sign-absence-260nw-373243873.jpg";
+    } else {
+    // do nothing
+    }
     Product.create(req.body, (error, createdProduct)=>{
         console.log(createdProduct);
         res.redirect('/store');
@@ -90,11 +90,11 @@ router.put('/:id/bought', (req, res) => {
 
 // UPDATE / PUT Route
 router.put('/:id', (req, res)=>{
-// if(req.body.shipIsBroken === 'on'){
-//     req.body.shipIsBroken = true;
-// } else {
-//     req.body.shipIsBroken = false;
-// }
+if(req.body.img == ''){
+    req.body.img = "https://image.shutterstock.com/image-vector/no-image-available-sign-absence-260nw-373243873.jpg";
+} else {
+// do nothing
+}
     Product.findByIdAndUpdate(req.params.id, req.body, (err, updatedModel)=>{
       res.redirect(`/store/${req.params.id}`)
     });
