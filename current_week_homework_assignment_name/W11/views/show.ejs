@@ -4,23 +4,48 @@
         <meta charset="utf-8">
         <title></title>
         <link rel="stylesheet" href="/css/app.css">
-
+        <style>
+            h2 {
+                margin-bottom:0px;
+            }
+        </style>
     </head>
     <body>
-            <h2><%= products.name %></h3>
+            <h2><%= products.name %></h2>
+            <a class="small-link" href="/store/<%= products.id %>/edit">Edit this product's information</a>
             <p>
+                <img src="<%= products.img %>"/><br/>
                 <%= products.description %>
+                <br/>
+                <b>PRICE</b>: $<%= products.price %>
             </p>
-            <p>
-                PRICE: $<%= products.price %>
-            </p>
-            <p>
-                 <font color=blue size=2><b><%= products.qty %> remaining</b></font>
-            </p>
-            <p>
-                <form action="/store/<%= products.id; %>?_method=DELETE" method="POST">
-                    <button id="buy">BUY</button>
-                </form>
+                <% if ( products.qty > 0 ) { %>
+                    <p class="quantity">
+                            <%= products.qty %> remaining
+                    </p>
+                <% } else { %>
+                    <p class="sold-out">
+                            OUT of STOCK
+                    </p>
+                <% } %>
+                <br/>
+                <% if ( products.qty > 0 ) { %>
+                    <form action="/store/<%= products.id %>/bought?_method=PUT" method="POST">
+                        <input id="buy" type="submit" value="BUY" />
+                    </form>
+                <% } else { %>
+                    <form action="" method="">
+                        <button id="sold-out">SOLD OUT</button>
+                    </form>
+                <% } %>
+        <!-- TODO:
+                --When the BUY button pressed, it should make a request to UPDATE the qty and decrease it by 1
+                --You will need the id
+                --Can you edit the qty value just in the route?
+                    --product.qty -= 1
+                        --Will you have to product.save() ?
+        -->
+
                 <form action="/store/<%= products.id; %>?_method=DELETE" method="POST">
                     <input id="delete" type="submit" value="DELETE" />
                 </form>

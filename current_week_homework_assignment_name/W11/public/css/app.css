@@ -49,6 +49,7 @@ text-decoration: none;
 #buy {
     border: 2px solid darkblue;
     background: lightskyblue;
+    color: black;
     font-weight: bold;
     border-radius: 4px;
 }
@@ -59,4 +60,41 @@ text-decoration: none;
     color: black;
     font-weight: bold;
     border-radius: 4px;
+}
+
+.quantity {
+    font-weight: bold;
+    color: green;
+    background: lightgray;
+    font-size:small;
+    display: inline;
+}
+
+.small-link {
+    font-size:x-small;
+}
+
+.sold-out { /* paragraph */
+    font-weight: bold;
+    color: rgb(39, 39, 39);
+    background: lightgray;
+    font-size:small;
+    display: inline;
+}
+
+#sold-out { /* button */
+    border: 2px solid rgb(39, 39, 39);
+    background: rgb(107, 107, 107);
+    color: rgb(39, 39, 39);
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+img {
+    width: 250px;
+}
+
+.product-card {
+    display:flex;
+    border: 1px solid red;
 }

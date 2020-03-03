@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h1>Edit this product's information:</h1>
+        <form action="/store/<%=products.id%>?_method=PUT" method="POST">
+
+            Name: <input type="text" name="name" value="<%=products.name%>"/><br/>
+    		Description:<br/><textarea type="text" name="description" cols="30" rows="4" value=""><%=products.description%></textarea><br/>
+            Image: <input style='width:325px;' type="text" name="img" value="<%=products.img%>"/><br/>
+            <img src=" <%= products.img %> "> <br/>
+            Price: <input type="number" name="price" value="<%=products.price%>" min="1"/><br/>
+            Quantity: <input type="number" name="qty" value="<%=products.qty%>" min="0"/><br/>
+            <br/>
+            <input type="submit" name="" value="Submit Changes"/>
+        </form>
+        <p>
+            <a href="/store/<%=products.id%>">BACK to PRODUCT</a>
+        </p>
+    </body>
+</html>
