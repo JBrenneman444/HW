@@ -1,4 +1,4 @@
-const receipt1 =
+const receipts = [
   {
     person: 'Karolin',
     order: {
@@ -13,37 +13,38 @@ const receipt1 =
       cost: 22
     },
     paid: false
+  },
+  {
+    person: 'Mark',
+    order: {
+      main: 'Rice Bowl',
+      protein: 'Ginger Soy Chix',
+      rice: 'Sticky Rice',
+      sauce: 'Korilla',
+      toppings: [
+        'Yuzu Pickled Sweet Pepper', 'Kale'
+      ],
+      drink: 'Korchata',
+      cost: 19
+    },
+    paid: false
+  },
+  {
+    person: 'Matt',
+    order: {
+      main: 'Salad Bowl',
+      protein: 'Organic Tofu',
+      rice: 'none',
+      sauce: "K'lla",
+      toppings: [
+        'Blue Potato Salad', 'Pico De Gallo', 'Red Kimchi'
+      ],
+      drink: 'Sparkling Blood Orange Soda',
+      cost: 20
+    },
+    paid: true
   }
-const receipt2 = {
-  person: 'Jerrica',
-  order: {
-    main: 'Rice Bowl',
-    protein: 'Ginger Soy Chix',
-    rice: 'Sticky Rice',
-    sauce: 'Korilla',
-    toppings: [
-      'Yuzu Pickled Sweet Pepper', 'Kale'
-    ],
-    drink: 'Korchata',
-    cost: 19
-  },
-  paid: false
-}
-const receipt3 = {
-  person: 'Matt',
-  order: {
-    main: 'Salad Bowl',
-    protein: 'Organic Tofu',
-    rice: 'none',
-    sauce: "K'lla",
-    toppings: [
-      'Blue Potato Salad', 'Pico De Gallo', 'Red Kimchi'
-    ],
-    drink: 'Sparkling Blood Orange Soda',
-    cost: 20
-  },
-  paid: true
-}
+]
 
 class Receipt extends React.Component {
     render () {
@@ -63,21 +64,20 @@ class Receipt extends React.Component {
 }
 class App extends React.Component {
     state = {
-        receipt3: receipt3,
-        receipt2: receipt2,
-        receipt1: receipt1
+        receipts:receipts
     }
     render () {
-      console.log(receipt1)
-      console.log(receipt2)
-      console.log(receipt3)
+      console.log(receipts)
+      console.log(receipts[0])
+      console.log(receipts[1])
+      console.log(receipts[2])
+
         return (
             <div>
                 <h1>KORILLA</h1>
                 <div className="main">
-                  {this.state.receipt1.paid ? '' : <Receipt receipt={receipt1}/>}
-                  {this.state.receipt2.paid ? '' : <Receipt receipt={receipt2}/>}
-                  {this.state.receipt3.paid ? '' : <Receipt receipt={receipt3}/>}
+                  {this.state.receipts.map(receipt => receipt.paid ? '' : <Receipt receipt={receipt}/>)}
+
                 </div>
             </div>
         )
