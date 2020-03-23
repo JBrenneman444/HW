@@ -1,0 +1,13 @@
+h1 {
+    text-align: center;
+}
+
+.main {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.box {
+    border: 1px solid blue;
+}
