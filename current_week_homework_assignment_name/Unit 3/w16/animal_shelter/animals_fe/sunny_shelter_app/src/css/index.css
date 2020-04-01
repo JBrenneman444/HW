@@ -1,0 +1,95 @@
+/* 
+* {
+  border: 1px solid teal;
+} */
+
+h5, h1 {
+    text-align: center;
+  }
+  
+  form {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  table , form {
+    width: 30%;
+    margin:auto;
+  }
+  
+  td {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  td:hover{
+    cursor: pointer;
+    color: #18ff37;
+    cursor: pointer;
+  }
+  
+  .adopted {
+    opacity: 0.5;
+    font-style: italic;
+  }
+
+  img {
+    max-height : 1em;
+  }
+  
+  img:hover {
+    opacity: .8;
+    cursor: pointer;
+  }
+  
+  .dim {
+    background: grey;
+  }
+  
+  /****************************************************
+  * Modals
+  ****************************************************/
+
+  
+  .details {
+  
+    background: #fafafa;
+    padding: 1em 1em 0;
+    border-radius: 10px  0 0 10px ;
+    width:30%;
+  }
+  
+  h3, span {
+    color: #888;
+  }
+  
+  .edit {
+    display: block;
+  }
+  .button-red {
+    background-color: #ff5252;
+  }
+
+  .button-green {
+    background-color: green;
+  }
+  
+  .editButton > button {
+    background-color: lightgreen;
+    font-weight: bolder;
+    padding-left:5px;
+    padding-right:5px;
+  }
+
+  /* JAKES */
+  .flex-container {
+    display: flex;
+  }
+
+  .editDiv {
+    width:30%;
+  }
